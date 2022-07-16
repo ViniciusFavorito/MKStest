@@ -42,27 +42,20 @@ export const checkoutSlice = createSlice({
         RemoveItem: (state, action: PayloadAction<IProduct>) => {
             const item = action.payload
             const itemIndex = state.items.findIndex(({ id }) => id === item.id)
-            const amount = state.amount - state.items[itemIndex].amount
-            state.amount = amount
+            state.totalPrice = state.totalPrice - ((state.items[itemIndex].amount || 1) * Number(state.items[itemIndex].price))
+            state.amount = state.amount - state.items[itemIndex].amount
             state.items = state.items.filter(({ id }) => id !== item.id)
-
-            state.totalPrice = state.totalPrice - (amount * Number(state.items[itemIndex].price))
-
         },
         SubtractItem: (state, action: PayloadAction<IProduct>) => {
             const item = action.payload
             const itemIndex = state.items.findIndex(({ id }) => id === item.id)
-            const amount = state.amount - state.items[itemIndex].amount
-            a
             if (state.items[itemIndex].amount > 1) {
                 state.items[itemIndex].amount -= 1
-                console.log(state.items[itemIndex].amount -= 1)
             } else {
                 state.items = state.items.filter(({ id }) => id !== item.id)
             }
             state.amount -= 1
-            state.totalPrice = state.totalPrice - (state.items[itemIndex].amount * Number(state.items[itemIndex].price))
-            console.log(state.items[itemIndex].amount)
+            state.totalPrice = (state.totalPrice - Number(state.items[itemIndex]?.price) || 0)
 
 
         },
