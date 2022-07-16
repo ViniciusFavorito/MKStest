@@ -2,31 +2,30 @@ import styled from "styled-components"
 
 export const DivBody = styled.div`
     display: flex;
-    position: relative;
-    flex-direction: row;
     justify-content: center;
     align-items: center;
     margin-top:100px;
+    width: 100%;
     background-color: #f9f9f9;
+
 `;
 
 export const DivContent = styled.div`
-    width: 70%;
+    width: 100%;
+    max-width: 1350px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     overflow: auto;
     flex: 1;
+    gap: 22px;
 `;
 
 export const DivCard = styled.div`
     background-color: #ffffff;
     width: 300px;
     height: 400px;
-    margin-top:30px ;
-    margin-left:10px ;
-    margin-right: 10px;
     border-radius: 1rem;
     display: flex;
     flex-direction: column;
@@ -128,5 +127,31 @@ export const ContentBody = styled.div`
     width: 100vw;
     height: 100vh;
     position: relative;
+`;
 
+export const DivSkeleton = styled.div`
+    width: 217px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    background: #FFFFFF;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.135216);
+    border-radius: 8px;
+    padding: 14px;
+`;
+
+export const DivFooter = styled.div`
+    display: flex;
+    margin-top: 150px;
+`;
+
+export const DivFooterContent = styled.div`
+    background-color: #EEEEEE;
+    display: flex;
+    width: 100%;
+    color: black;
+    justify-content: center;
+    height: 34px;
+    font-size: 12px;
+    
 `;

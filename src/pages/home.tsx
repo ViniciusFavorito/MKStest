@@ -1,4 +1,4 @@
-import { ButtonBuy, ContentBody, DivBody, DivBuyIcon, DivBuyWrite, DivCard, DivContent, DivDescription, DivImgProduct, DivNamePriceProduct, DivNameProduct, DivPriceProduct, ImgProduct } from '../styles/BodyStyled';
+import { ButtonBuy, ContentBody, DivBody, DivBuyIcon, DivBuyWrite, DivCard, DivContent, DivDescription, DivImgProduct, DivNamePriceProduct, DivNameProduct, DivPriceProduct, DivSkeleton, ImgProduct } from '../styles/BodyStyled';
 import { useEffect, useState } from "react";
 import { apimks } from "../services/api";
 import { Navbar } from "../components/Navbar";
@@ -8,6 +8,7 @@ import { ProductsItem } from '../components/ProductItem';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../store';
 import { IProduct, setProducts } from '../store/features/products/productsSlice';
+import { Footer } from '../components/Footer';
 
 
 
@@ -40,13 +41,21 @@ export function Home() {
                             </DivContent>
                         </DivBody>
                     ) : (
-                        < SkeletonTheme baseColor="#cc1414" highlightColor="#444">
-                            <p>
-                                <Skeleton count={3} />
-                            </p>
-                        </SkeletonTheme>
+                        <>
+                            {[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0].map(() => (
+                                < DivSkeleton >
+                                    < SkeletonTheme width={"180px"} baseColor="#c4c1c1" highlightColor="#9a9696">
+                                        <Skeleton width="100%" height={150} style={{}} />
+                                        <Skeleton width="100%" height={38} style={{ marginTop: "12px" }} />
+                                        <Skeleton width="100%" height={25} style={{ marginTop: "8px" }} />
+                                        <Skeleton width="100%" height={31} style={{ marginTop: "12px", }} />
+                                    </SkeletonTheme>
+                                </DivSkeleton>
+                            ))}
+                        </>
                     )
             }
+            <Footer />
         </>
     )
 }
