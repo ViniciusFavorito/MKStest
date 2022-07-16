@@ -130,7 +130,8 @@ export const ContentBody = styled.div`
 `;
 
 export const DivSkeleton = styled.div`
-    width: 217px;
+    width: 300px;
+    height: 400px;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
