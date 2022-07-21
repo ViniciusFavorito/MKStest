@@ -101,20 +101,22 @@ export const ButtonBuy = styled.button`
 `;
 
 export const DivBuyIcon = styled.div`
-  padding: 10px;
-  width: 40%;
-  padding-left: 100px;
+  /* padding: 10px; */
+  padding-top: 10px;
+  padding-bottom: 10px;
+  width: 2%;
+  padding-left: 40px;
   cursor: pointer;
 `;
 
 export const DivBuyWrite = styled.div`
-  padding: 10px;
+  /* padding: 10px; */
   font-size: 18px;
   line-height: 18px;
-  width: 60%;
+  width: 100%;
   justify-content: start;
   align-items: start;
-  padding-right: 80px;
+  padding-right: 10px;
   cursor: pointer;
 `;
 

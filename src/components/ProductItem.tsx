@@ -33,7 +33,7 @@ export const ProductsItem = (product: IProduct) => {
         <DivBuyIcon>
           <CgShoppingBag size={20} />
         </DivBuyIcon>
-        <DivBuyWrite> Comprar </DivBuyWrite>
+        <DivBuyWrite> Adicionar ao carrinho</DivBuyWrite>
       </ButtonBuy>
     </DivCard>
   );
